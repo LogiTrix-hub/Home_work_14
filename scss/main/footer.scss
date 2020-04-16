@@ -30,9 +30,10 @@
 
     .form-footer-col {
         font-family: 'Open Sans', sans-serif;
-        padding-top: 7px;
-        padding-left: 21px;
-        padding-right: 2px;
+        padding: 7px 2px 0 21px;
+        @media (max-width: 767.98px) {
+            padding: 7px 15px 0;
+        }
         label {
             @extend %footer-style-head;
             margin-bottom: 42px;
