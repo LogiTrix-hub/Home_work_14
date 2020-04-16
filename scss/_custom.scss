@@ -1,0 +1,159 @@
+// --------------- bootstrap_custom_START
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1170px
+) !default;
+
+
+$navbar-padding-y:          0;
+$navbar-padding-x:          0;
+
+$btn-font-size-sm:          13px;
+
+$border-radius:              5px;
+// --------------- bootstrap_custom_END
+
+body {
+  background-color: #fff;
+}
+
+em {
+  font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// var colors
+$hover-border-color: #32b0ee;
+$intro-span-tcolor: #0feb9e;
+$main-color: #0eb493;
+$color-hover-cards: rgba(#0eb493, 0.9);
+$color-footer: #1ea78d;
+$dark-text-color: #062033;
+$green: $main-color;
+
+%navbar-brand-custom {
+    font:28px 'Pacifico', cursive;
+    color: white;
+}
+
+%after-before-custom {
+    content: '';
+    background: $intro-span-tcolor;
+    width: 28px; 
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    @media (max-width: 420px) {
+      width: 14px;
+    }
+}
+
+%centering-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%socials-icon-carousel {
+  font-family: 'icomoon';
+  font-size: 18px;
+  transition: ease-in 0.1s;
+}
+
+%indicators-custom {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+%paragraph-bold-style {
+  text-align: center;
+  font: 600 18px 'Open Sans', sans-serif;
+  color: $dark-text-color;
+}
+
+%overlay-img-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px;
+
+  opacity: 0;
+  transition: linear 0.2s;
+}
+
+%footer-style-head {
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+}
+
+@mixin header-heart { //HEART-HEADER-MIXIN
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 55px;
+  h2 {
+    font:800 28px/1 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: $main-color;
+    text-align: center;
+
+    margin-bottom: 18px;
+  }
+  span {
+    text-align: center;
+    &:before {
+      content: '\e90f';
+      font-family: 'icomoon';
+      font-size: 25px;
+      line-height: 1;
+      color: #000;
+      opacity: 0.2;
+    }
+    em {
+      position: relative;
+      &:before {
+        content: '';
+        width: 90px;
+        height: 1px;
+        background-color: $dark-text-color;
+
+        position: absolute;
+        top: 30%;
+        left: 10px;
+
+        opacity: 0.1;
+      }
+      &:after {
+        content: '';
+        width: 90px;
+        height: 1px;
+        background-color: $dark-text-color;
+
+        position: absolute;
+        top: 30%;
+        right: 36px;
+
+        opacity: 0.1;
+      }
+    }
+  }
+}

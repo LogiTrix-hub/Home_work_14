@@ -1,0 +1,89 @@
+@import "../_custom";
+
+.text-carousel-wrapper {
+    background-color: #f4f7f9;
+    padding-bottom: 55px;
+    .container {
+        padding-top: 75px;
+        position: relative;
+        .header-heart {
+            @include header-heart;
+        }
+        .carousel {
+            width: 100%;
+            .carousel-inner {
+                margin-bottom: 67px;
+                @media (max-width: 767.98px) {
+                    margin-bottom: 0;
+                }
+                .wrap-col {
+                    padding-left: 29px;
+                    span {
+                        float: left;
+                        width: 40px;
+                        height: 40px;
+                        border: 1px solid $main-color;
+                        border-radius: 50%;
+                        margin-right: 17px;
+                        position: relative;
+
+                        @extend %centering-style;
+                        &:before {
+                            font-family: 'icomoon';
+                            font-size: 1.2rem;
+                            color: $main-color;
+                        }
+                        &.first-col:before {
+                            content: '\e905';
+                        }
+                        &.second-col:before {
+                            content: '\e901';
+                            font-size: 1rem;
+                        }
+                        &.third-col:before {
+                            content: '\e902';
+                        }
+                    }
+                    .text-content {
+                        width: calc(100% - 58px);
+                        float: left;
+                        @media (max-width: 767.98px) { 
+                            margin-bottom: 30px;
+                            padding-right: 10px;
+                         }
+                    }
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color:  $dark-text-color;
+                        position: relative;
+                        margin-bottom: 16px;
+                    }
+                    p {
+                        font-size: 13px;
+                        line-height: 21px;
+                        font-weight: 400;
+                        color:  $dark-text-color;
+                        opacity: 0.7;
+                    }
+                }
+            }
+            .carousel-indicators {
+                margin: 0;
+                li {
+                    @extend %indicators-custom;
+                    border: 1px solid $dark-text-color;
+                    background-clip: inherit;
+
+                    margin: 0 0 0 15px;
+                    &:first-child {
+                        margin: 0;
+                    }
+                    &:hover, &.active {
+                        background-color: $dark-text-color;
+                    }
+                }
+            }
+        }
+    }
+}

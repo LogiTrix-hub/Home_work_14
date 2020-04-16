@@ -1,0 +1,171 @@
+@import "../_custom";
+
+.ourteam-wrapper {
+    background-color: #fff;
+    padding-top: 85px;
+    padding-bottom: 120px;
+    @media (max-width: 575.98px) {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+    .container {
+        .header-heart {
+            @include header-heart;
+            margin-bottom: 18px;
+        }
+        p {
+            @extend %paragraph-bold-style;
+
+            margin-bottom: 108px;
+        }
+        .col-12 {
+            display: flex;
+            justify-content: center;
+            padding: 0 15px;
+        }
+        .card {
+            // width: 270px;
+            border: none;
+            border-radius: 0;
+            &:hover { 
+                .card-img-overlay {
+                    opacity: 1;
+                    background-color: $color-hover-cards;
+                    h4,p {
+                        opacity: 1;
+                    }
+                    a {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                .card-body {
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+            img {
+                width: 270px;
+                border-radius: 0;
+            }
+            .card-img-overlay {
+                text-align: center;
+
+                height: 300px;
+
+                @extend %overlay-img-style;
+                padding: 20px !important;
+                h4 {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: white;
+                }
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: white;
+                    margin-bottom: 65px;
+                }
+                ul {
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+
+                    display: flex;
+                    justify-content: center;
+                }
+                li {
+                    list-style: none;
+                    margin-left: 6px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+                a {
+                    width: 42px;
+                    height: 42px;
+
+                    background-color: rgba(#000, 0.3);
+
+                    transform: translateY(-30px);
+                    transition: linear 0.2s;
+                    &:hover {
+                        background-color: rgba(rgb(255, 255, 255), 0.3);
+                        text-decoration: none;
+                        &:before {
+                            font-size: 22px;
+                        }
+                    }
+                    &:before {
+                        @extend %socials-icon-carousel;
+                        color: white;
+                        transition: linear 0.2s;
+                    }
+                    &.twitter {
+                        @extend %centering-style;
+                        &:before {
+                            content: '\e908';
+                        }
+                    }
+                    &.facebook {
+                        @extend %centering-style;
+                        &:before {
+                            content: '\e904';
+                        }
+                    }
+                    &.google {
+                        @extend %centering-style;
+                        &:before {
+                            content: '\e911';
+                        }
+                    }
+                }
+            }
+            .card-body {
+                text-align: center;
+                padding: 12px;
+                @media (max-width: 1199.98px) {
+                    margin-bottom: 35px;
+                }
+                a {
+                    font:600 18px/34px 'Open Sans', sans-serif;
+                    color: $dark-text-color;
+                    display: inline-block;
+
+                    white-space: nowrap;
+                    width: 60%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p {
+                    font:400 13px 'Open Sans', sans-serif;
+                    
+                    margin: 0;
+                }
+            }
+        }
+        .carousel-inner {
+            margin-bottom: 80px;
+            @media (max-width: 575.98px) {
+                margin-bottom: 30px;
+            }
+        }
+        .carousel-indicators {
+            margin: 0;
+            li {
+                @extend %indicators-custom;
+                border: 1px solid $dark-text-color;
+                background-clip: inherit;
+
+                margin: 0 0 0 15px;
+                &:first-child {
+                    margin: 0;
+                }
+                &:hover, &.active {
+                    background-color: $dark-text-color;
+                }
+            }
+        }
+    }
+}

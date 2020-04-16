@@ -1,0 +1,160 @@
+@import "../_custom";
+
+.carousel-wrapper {
+    .carousel {
+        .carousel-item {
+            .carousel-caption {
+                padding: 0;
+            }
+            h1 {
+                font: 300 62px/78px 'Open Sans', sans-serif;
+                margin-bottom: 25px;
+                em {
+                    font-weight: bold;
+                }
+                span {
+                    opacity: 0.9;
+                    line-height: 1;
+                    font-size: 48px;
+                    display: block;
+                    em {
+                        font-weight: 300;
+                        color: $intro-span-tcolor;
+                    }
+                    @media screen and (max-width: 911px) {
+                        font-size: 32px;
+                    }
+                    @media screen and (max-width: 630px) {
+                        font-size: 22px;
+                    }
+                }
+                @media screen and (max-width: 911px) {
+                    font-size: 42px;
+                    line-height: 42px;
+                    margin-bottom: 15px;
+                }
+                @media screen and (max-width: 630px) {
+                    font-size: 28px;
+                    line-height: 28px;
+                    margin-bottom: 10px;
+                }
+            }
+            p {
+                font-size: 18px;
+
+                opacity: 0.9;
+                position: relative;
+                display: inline-block;
+
+                margin-bottom: 100px;
+                &:before {
+                    @extend %after-before-custom;
+                    left: -61px;
+                }
+                &::after {
+                    @extend %after-before-custom;
+                    right: -61px;   
+                }
+                @media screen and (max-width: 911px) {
+                    margin-bottom: 20px;
+                }
+                @media screen and (max-width: 630px) {
+                    font-size: 14px;
+
+                    margin-bottom: 5px;
+                    &:before {
+                        left: -41px;
+                    }
+                    &::after {
+                        right: -41px;
+                    }
+                }
+                @media (max-width: 420px) {
+                    &:before {
+                        // display: none;
+                        left: -22px;
+                        width: 14px;
+                    }
+                    &::after {
+                        // display: none;
+                        right: -22px;
+                        width: 14px;
+                    }
+                }
+            }
+            .socials-wrapper {
+                padding: 0;
+                margin-bottom: 27px;
+
+                display: flex;
+                justify-content: center;
+                list-style: none;
+                a {
+                    margin-left: 10px;
+                    color: white;
+                    opacity: 0.3;
+                    
+                    transition: ease 0.2s;
+                    &:hover {
+                        opacity: 1;
+                        text-decoration: none;
+                    }
+                }
+                @media screen and (max-width: 630px) {
+                    margin-bottom: 0;
+                }
+                // style-icon-START
+                .twitter {
+                    &:before {
+                        content: '\e908';
+                        @extend %socials-icon-carousel;
+                    }
+                }
+                .facebook {
+                    &:before {
+                        content: '\e904';
+                        @extend %socials-icon-carousel;
+                    }
+                }
+                .google {
+                    &:before {
+                        content: '\e911';
+                        @extend %socials-icon-carousel;
+                    }
+                }
+                .dribble {
+                    &:before {
+                        content: '\e903';
+                        @extend %socials-icon-carousel;
+                    }
+                }
+                // style-icon-END
+            }
+        }
+        ol {
+            position: absolute;
+            left: inherit;
+            right: 0;
+            bottom: calc(50% - 38px);
+
+            display: inline-block;
+
+            margin: 0 48px 0 0;
+            li {
+                margin-bottom: 15px;
+
+                @extend %indicators-custom;
+
+                background-clip: inherit;
+                border: 1px solid white;
+                &:hover, &.active {
+                    background-color: white;
+                }
+            }
+            @media screen and (max-width: 540px) {
+                margin: 0 8px 0 0;
+            }
+            
+        }
+    }
+}
